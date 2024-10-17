@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'temporario';
+
+  constructor() {}
+
+  ngOnInit(): void {
+    console.log("Cheguei Aqui !!!");
+  }
 }
+
