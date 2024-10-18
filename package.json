@@ -4,8 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "npx -p @angular/cli@12 ng serve",
-    "build": "ng build",
+    "build": "npx -p @angular/cli@12 ng build --base-href https://falconii.github.io/temporario/ && copy docs\\index.html docs\\404.html",
     "watch": "ng build --watch --configuration development",
+    "404": "copy docs\\index.html docs\\404.html",
     "test": "ng test"
   },
   "private": true,
