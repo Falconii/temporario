@@ -5,20 +5,19 @@
       <mat-icon>menu</mat-icon>
     </button>
     <span>Simionato Auditores</span>
-    <span *ngIf="showMenu">
+    <span >
       <button mat-button [matMenuTriggerFor]="cadastros" (click)="setOpcao('Cadastros')"
-        [ngStyle]="{'color' : opcao==='Cadastros' ? 'red' : 'white' }" *ngIf="okCadastros()">Cadastros</button>
+        >Cadastros</button>
       <button mat-button [matMenuTriggerFor]="projetos" (click)="setOpcao('Projetos')"
-        [ngStyle]="{'color' : opcao==='Projetos' ? 'red' : 'white' }" *ngIf="okProjetos()">Diretoria</button>
+        >Diretoria</button>
       <button mat-button [matMenuTriggerFor]="planejamento" (click)="setOpcao('Planejamento')"
-        [ngStyle]="{'color' : opcao==='Planejamento' ? 'red' : 'white' }"
-        *ngIf="okPlanejamento()">Coordenadores</button>
+        >Coordenadores</button>
       <button mat-button [matMenuTriggerFor]="execucao" (click)="setOpcao('Execução')"
-        [ngStyle]="{'color' : opcao==='Execução' ? 'red' : 'white' }" *ngIf="okExecucao()">Auditores</button>
+        >Auditores</button>
       <button mat-button [matMenuTriggerFor]="gerencial" (click)="setOpcao('Gerencial')"
-        [ngStyle]="{'color' : opcao==='Gerencial' ? 'red' : 'white' }" *ngIf="okGerencial()">Gerencial</button>
+        >Gerencial</button>
       <button mat-button [matMenuTriggerFor]="sobre" (click)="setOpcao('Sobre')"
-        [ngStyle]="{'color' : opcao==='Sobre' ? 'red' : 'white' }">Sobre</button>
+        >Sobre</button>
     </span>
     <span>
       <!-- #docregion sub-menu -->
@@ -41,8 +40,8 @@
         <button mat-menu-item routerLink="projetos">Contratos</button>
         <button mat-menu-item routerLink="agendacoordenador">Agenda Coordenadores</button>
         <button mat-menu-item routerLink="horas-lista-01">Auditores x Horas Apontadas</button>
-        <button mat-menu-item [matMenuTriggerFor]="tickets" *ngIf="getUsuarioId() == 16">Controle De Tickets</button>
-        <button mat-menu-item [matMenuTriggerFor]="horas" *ngIf="getUsuarioId() == 16">Controle De Horas</button>
+        <button mat-menu-item [matMenuTriggerFor]="tickets">Controle De Tickets</button>
+        <button mat-menu-item [matMenuTriggerFor]="horas">Controle De Horas</button>
       </mat-menu>
       <mat-menu #tickets="matMenu">
         <button mat-menu-item routerLink="tickets">Controle Mensal</button>
@@ -58,7 +57,6 @@
         <button mat-menu-item routerLink="projetos">Contratos</button>
         <button mat-menu-item routerLink="execucao">Apontamentos</button>
         <button mat-menu-item routerLink="agendatrabalhos">Agenda Auditores</button>
-        <!--<button mat-menu-item routerLink="extratoaudi">Extrato Auditores</button>-->
       </mat-menu>
       <mat-menu #gerencial="matMenu">
         <!--<button mat-menu-item routerLink="gerencial">Controle Dos Contratos</button>-->
@@ -69,16 +67,10 @@
       </mat-menu>
     </span>
     <span class="example-spacer"></span>
-    <label>{{getUsuario()}}</label>
+    <label>TESTE</label>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" matTooltip="LOGIN"
       matTooltipPosition="above" (click)="onLogin()">
       <mat-icon>person</mat-icon>
     </button>
   </mat-toolbar>
 </p>
-<div class="spin">
-  <app-spins></app-spins>
-</div>
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
